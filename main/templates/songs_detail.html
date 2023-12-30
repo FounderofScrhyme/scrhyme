@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Songs detail{% endblock %}
+{% block active_songs_feed %}active{% endblock %}
+
+{% block contents %}
+ <body>
+        <!-- Page content-->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Post content-->
+                    <article>
+                        <!-- Post header-->
+                        <div class="mb-4">
+                            <!-- Post title-->
+                            <h1 class="fw-bolder mb-1">{{ object.songtitle }}</h1>
+                            <h2 class="card-title mt-1 mb-3"> {{ songs.username }}</h2>
+                            <!-- Post meta content-->
+                            <div class="text-muted fst-italic mb-2">{{ object.created_at }}</div>
+                            <!-- Post categories-->
+                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{ object.beat }}</a>
+                            <div class="mt-3 mb-3">
+                                <audio controls src="{{ object.song.url }}"></audio>
+                            </div>
+                        </div>
+                        <!-- Post content-->
+                        <section class="mb-5">
+                            <p class="card-title">{{ object.lyrics }}</p>
+                        </section>
+                        <a class="btn btn-primary mt-5 mb-3" href="{% url 'main:songs_update' object.pk %}">Edit</a>
+                        <a class="btn btn-danger mt-5 ml-2 mb-3" href="{% url 'main:songs_delete' object.pk %}">Delete</a>
+                    </article>
+                </div>
+                 <!-- Side widgets-->
+                <div class="col-lg-4">
+                     <div class="card mb-4">
+                        <div class="card-header">Which is your favorite songs?</div>
+                        <div class="card-body">Pressing the 'like' button is encouraging for us and other users.<br>
+                            So, if you find your favorite song, please give it a like.
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                    <div class="card-header">Request vocal processing</div>
+                        <div class="card-body stripe">
+                            <a href="https://buy.stripe.com/test_cN2fZt9HU9kw2AMdQQ"　target="_blank">
+                                <img src="{% static 'assets/img/stripe_logo.jpg' %}"><br>
+                            </a>
+                            <a href="https://buy.stripe.com/test_cN2fZt9HU9kw2AMdQQ">Make a payment with Stripe.</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'js/songs_detail.js' %}"></script>
+    </body>
+{% endblock %}

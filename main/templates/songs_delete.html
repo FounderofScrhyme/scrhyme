@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Songs delete{% endblock %}
+{% block active_songs_feed %}active{% endblock %}
+
+{% block contents %}
+ <body>
+        <!-- Page content-->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-8">
+                   <div class="row">
+                       <form method="POST">
+                           {% csrf_token %}
+                           <h5>Do you really want to delete?</h5>
+                           <button class="btn btn-primary mt-5" type="submit">Delete</button>
+                           <a class="btn btn-secondary mt-5 ml-2" href="{% url 'main:songs_detail' object.pk %}">Cancel</a>
+                       </form>
+                   </div>
+                </div>
+                 <!-- Side widgets-->
+                <div class="col-lg-4">
+                     <div class="card mb-4">
+                        <div class="card-header">Which is your favorite songs?</div>
+                        <div class="card-body">Pressing the 'like' button is encouraging for us and other users.<br>
+                            So, if you find your favorite song, please give it a like.
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                    <div class="card-header">Request vocal processing</div>
+                        <div class="card-body stripe">
+                            <a href="https://buy.stripe.com/test_cN2fZt9HU9kw2AMdQQ"　target="_blank">
+                                <img src="{% static 'assets/img/stripe_logo.jpg' %}"><br>
+                            </a>
+                            <a href="https://buy.stripe.com/test_cN2fZt9HU9kw2AMdQQ">Make a payment with Stripe.</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'js/songs_detail.js' %}"></script>
+    </body>
+{% endblock %}

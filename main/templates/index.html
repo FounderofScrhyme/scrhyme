@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Scrhyme{% endblock %}
+
+{% block header %}
+<!-- Header-->
+            <header class="bg-dark py-0">
+                <div id="background">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="my-5 text-center text-xl-start">
+                                <h1 class="display-5 fw-bolder text-white mb-2">What we make <br>is a world<br>
+            where <br>
+            everybody have their own songs.</h1>
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start pt-4">
+                                    {% if user.is_authenticated %}
+                                    <a class="btn btn-outline-info btn-lg px-4" href="{% url 'main:songs_feed' %}">Songs Feed</a>
+                                    {% else %}
+                                    <a class="btn btn-outline-info btn-lg px-4 me-sm-3" href="{% url 'account_signup' %}" >Sign up</a>
+                                    <a class="btn btn-outline-warning btn-lg px-4" href="{% url 'main:songs_feed' %}">Songs Feed</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </header>
+{% endblock %}
+
+{% block contents %}
+            <!-- Features section-->
+            <section class="py-5" id="features">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0">
+                            <h2 class="fw-bolder mb-0">Create your own songs and compete with other artists who have used the same beat.</h2>
+                            <p class="make-a-scrhyme-account mt-2">Make a Scrhyme account to post your own songs.<br>
+                                And go deeper with our platform for songs and artists.</p>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="row gx-5 row-cols-1 row-cols-md-2">
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-music-note"></i></div>
+                                    <h2 class="h5">First things first, choose a favorite beat.</h2>
+                                    <p class="mb-0">Select the beat you want to make a song with. <br>
+                                        The lineup of beats is mainly hip-hop.</p>
+                                </div>
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-pen"></i></div>
+                                    <h2 class="h5">Next, write a lyrics.</h2>
+                                    <p class="mb-0">Write down what you want to sing or rap.
+                                        <br>Singing about substances is currently permitted because Scrhyme is still an unknown service.<br>Do it now if you want!</p>
+                                </div>
+                                <div class="col mb-5 mb-md-0 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-mic-fill"></i></div>
+                                    <h2 class="h5">Record your vocal.</h2>
+                                    <p class="mb-0">If you can use a DAW, please record your vocals on your DAW.
+                                        <br>If you cannot, we will process your vocal for $20 to give it a professional quality finish.
+                                        <br>You can submit your vocal from <a href="{% url 'main:request' %}" class="btn btn-info mt-3">Request vocal processing</a></p>
+                                </div>
+                                <div class="col h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-upload"></i></div>
+                                    <h2 class="h5">Finally, post your song.</h2>
+                                    <p class="mb-0">Currently, posts are displayed in the order they are submitted, but we will soon implement features such as favorites and ratings. <br>
+                                       <strong> Why not become one of the first contributors on next TikTok?</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonial section-->
+            <div class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-10 col-xl-7">
+                            <div class="text-center">
+                                <div class="fs-4 mb-4 fst-italic">"We'll make making music more accessible to everyone with this platform and bring great songs to the world, in a way no one has ever witnessed"</div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img class="rounded-circle me-3" src="{% static 'assets/img/founder-profile.png' %}" />
+                                    <div class="fw-bold">
+                                        Kotaro Kobu
+                                        <span class="fw-bold text-primary mx-1">/</span>
+                                        Founder, Scrhyme
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}

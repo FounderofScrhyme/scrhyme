@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Download your favorite beat{% endblock %}
+
+
+{% block head %}
+<link href="{% static 'css/songs_feed.css' %}" rel="stylesheet" />
+<link href="{% static 'css/pagination.css' %}" rel="stylesheet" >
+{% endblock %}
+
+{% block contents %}
+   <body>
+        <!-- Page header with logo and tagline-->
+        <header class="py-5 bg-light border-bottom mb-4">
+            <div class="container">
+                <div class="text-center my-3">
+                    <h1 class="fw-bolder">Request vocal processing.</h1>
+                    <p class="lead mb-0 mb-3">
+                      We will create a submission form immediately. Please wait a little. <br>Send a vocal file in WAV, MP3, or M4A format to the email address below, specifying the processing you would like with specific examples. <br>
+    For instance, 'Apply T-Pain style autotune, add a wet delay, then put a short reverb,' or 'Make it sound like Drake in Rihanna's Work'.
+                    </p>
+                </div>
+            </div>
+        </header>
+        <!-- Page content-->
+        <div class="container">
+            <div class="row">
+                <!-- Blog entries-->
+                <div class="col-lg-8">
+                    <!-- Featured blog post-->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            Important notice: Please send the vocal file along with the email address used during the payment via Stripe.
+                        </div>
+                        <div class="card-body mt-3 mb-2">
+                            scrhymefounder@gmail.com
+                        </div>
+                    </div>
+                </div>
+                <!-- Side widgets-->
+                <div class="col-lg-4">
+                    <!-- Search widget-->
+                   <div class="card mb-4">
+                        <div class="card-header">Request vocal processing</div>
+                        <div class="card-body stripe">
+                            <a href="https://buy.stripe.com/test_cN2fZt9HU9kw2AMdQQ"　target="_blank">
+                                <img src="{% static 'assets/img/stripe_logo.jpg' %}"><br>
+                            </a>
+                            <a href="https://buy.stripe.com/test_cN2fZt9HU9kw2AMdQQ">Make a payment with Stripe.</a>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header">Which is your favorite songs?</div>
+                        <div class="card-body">Pressing the 'like' button is encouraging for us and other users.<br>
+                            So, if you find your favorite song, please give it a like.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'js/songs_feed.js' %}"></script>
+    </body>
+{% endblock %}

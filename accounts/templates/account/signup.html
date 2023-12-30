@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load socialaccount %}
+{% load django_bootstrap5 %}
+
+{% block title %}Sign up{% endblock %}
+
+{% block active_signup %}active{% endblock %}
+
+{% block contents %}
+<div class="container">
+  <div class="row">
+    <div class="my-div-style">
+      <h1>Sign up</h1>
+      <form method="post" action="{% url 'account_signup' %}">
+        {% csrf_token %}
+
+        <div class="mb-4 col-12">
+          {% bootstrap_form form %}
+        </div>
+
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+
+        <p>Before signing up, please check <a href="#">Terms of use</a>.</p>
+        <a href="{% provider_login_url 'google' %}?next=/" class="btn btn-primary">Signup with Google</a>
+        <button class="btn btn-primary" type="submit">Sign up</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

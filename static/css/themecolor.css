@@ -1,0 +1,13 @@
+header, #background {
+  background: linear-gradient(45deg, #7b68ee,#ff00ff );
+}
+
+.my-div-style {
+  margin-top: 3rem;
+}
+
+
+.btn-width{
+   width: 64%
+
+  }

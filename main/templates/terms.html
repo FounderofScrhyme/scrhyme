@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Terms{% endblock %}
+{% block contents %}
+<head>
+    <title>Terms of use</title>
+</head>
+<body>
+  <div style="padding: 3rem">
+      <br><br>
+    <h1 style="text-align: center">Terms of Use</h1><br>
+
+
+    <h6>Welcome to Scrhyme, a user-generated content platform that allows users to create and share music-related content.
+        <br>Before using our services, please carefully review and agree to the following Terms of Use:</h6><br><br>
+
+    <h5>1. Acceptance of Terms:</h5>
+    <p>By accessing or using this website, you agree to be bound by these terms and conditions.<br> If you do not agree to these terms, please refrain from using the platform.</p>
+
+    <h5>2. User Content:</h5>
+    <p>Scrhyme enables users to upload, share, and create music-related content, including but not limited to audio, videos, images, and text("User Content").
+        <br>You retain ownership of your User Content, but by uploading it to the platform, you grant Scrhyme a non-exclusive, worldwide, royalty-free(at present), and perpetual license to use, reproduce, modify, distribute, and publicly display your contents on the platform.</p>
+
+    <h5>3. Intellectual Property Rights:</h5>
+    <p>Users must respect the intellectual property rights of others.
+        <br>Do not upload or share content that infringes upon the copyrights, trademarks, or other proprietary rights of any third party.
+        <br>Scrhyme reserves the right to remove any content that violates these rights.</p>
+
+    <h5>4. Prohibited Content:</h5>
+    <p>Users are strictly prohibited from uploading, sharing, or engaging in the following activities on the platform:</p>
+    <ol>
+      <li>Content that is unlawful, defamatory, obscene, or harmful.</li>
+      <li>Content that promotes discrimination, hatred,  violence against individuals or groups.</li>
+      <li>Content that contains viruses, malware, or any other harmful elements.</li>
+      <li>Content that violates the privacy of others or reveals sensitive personal information.</li>
+      <li>Content that constitutes spam or unauthorized advertising.</li>
+    </ol>
+
+    <h5>5. Account Security</h5>
+    <p>Users are responsible for maintaining the security of their accounts.
+        <br>Do not share your account credentials with others, and promptly notify us if you suspect any unauthorized access.</p>
+
+    <h5>6. Termination of Service</h5>
+    <p>Scrhyme reserves the right to suspend or terminate any user's account without prior notice if we believe they have violated these Terms of Use or engaged in any harmful or disruptive behavior.</p>
+
+    <h5>7. Changes to Terms</h5>
+    <p>Scrhyme may update or modify these Terms of Use from time to time. Any changes will be effective immediately upon posting on the platform.
+        <br>Continued use of the platform constitutes your acceptance of the revised terms.</p>
+
+    <h5>8. Disclaimer of Liability </h5>
+    <p>Scrhyme is provided "as is" without warranties of any kind.
+        <br>We do not guarantee the accuracy, completeness, or reliability of content on the platform or any links to third-party sites.</p>
+
+    <h5>9. Governing Law</h5>
+    <p>These Terms of Use shall be governed by and construed in accordance with the laws of Japan, without regard to its conflict of laws principles.</p><br>
+
+    <h6>By using Scrhyme, you acknowledge that you have read, understood, and agreed to these Terms of Use.
+        <br>If you have any questions or concerns, please <a href="{% url 'main:contact' %}">contact us</a>. Enjoy using the platform and sharing your music content with the community!<br><br><br></h6>
+  </div>
+</body>
+
+{% endblock %}
