@@ -36,7 +36,7 @@ INSTALLED_APPS = [
 
     'media',
 
-    'django-ses',
+    'django_ses',
 ]
 
 MIDDLEWARE = [
